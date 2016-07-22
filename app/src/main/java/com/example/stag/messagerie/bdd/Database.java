@@ -40,6 +40,20 @@ public class Database {
         return this.bdd.insert("user", null, cv_user);
     }
 
+    /**
+     * Update user
+     * @param u
+     * @return
+     */
+    public long updateUser(User u) {
+        ContentValues cv_user = new ContentValues();
+        cv_user.put("nom", u.getNom());
+        cv_user.put("prenom", u.getPrenom());
+        cv_user.put("email", u.getEmail());
+        cv_user.put("password", u.getPassword());
+        return this.bdd.update("user", cv_user, "id=?", new String[] {String.valueOf(u.getId())});
+    }
+
     public long insertConversation (Conversation c) {
         ContentValues cv_conversation = new ContentValues();
         cv_conversation.put("user_one", c.getUser_one().getId());
