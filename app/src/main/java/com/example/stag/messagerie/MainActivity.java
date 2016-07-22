@@ -3,9 +3,13 @@ package com.example.stag.messagerie;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+/**
+ * Created by eric on 22/07/2016.
+ */
 public class MainActivity extends AppCompatActivity {
 
     private Button startConversButton;
@@ -33,5 +37,9 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        Session session = new Session(getApplicationContext());
+        session.saveSessionState(true);
+        Log.d("SESSION_STATE", Boolean.toString(session.getSessionState()));
     }
 }

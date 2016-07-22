@@ -8,6 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+/**
+ * Created by eric on 22/07/2016.
+ */
 public class SignInActivity extends AppCompatActivity {
 
     private Button signInButton;
