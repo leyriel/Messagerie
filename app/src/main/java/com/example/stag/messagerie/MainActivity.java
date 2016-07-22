@@ -30,7 +30,8 @@ public class MainActivity extends AppCompatActivity {
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent_inscription = new Intent(MainActivity.this, InscriptionActivity.class);
+                startActivity(intent_inscription);
             }
         });
     }
