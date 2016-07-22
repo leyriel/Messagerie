@@ -18,7 +18,16 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+
+        Session session = new Session(getApplicationContext());
+        session.saveSessionState(true);
+        Log.d("SESSION_STATE", Boolean.toString(session.getSessionState()));
+
+        if(Boolean.toString(session.getSessionState())){
+            setContentView(R.layout.activity_conversation);
+        }else{
+            setContentView(R.layout.activity_main);
+        }
 
         startConversButton = (Button)findViewById(R.id.startButton);
         registerButton     = (Button)findViewById(R.id.registerButton);
@@ -37,9 +46,5 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
-        Session session = new Session(getApplicationContext());
-        session.saveSessionState(true);
-        Log.d("SESSION_STATE", Boolean.toString(session.getSessionState()));
     }
 }
