@@ -3,4 +3,6 @@
     <string name="start">Commencer</string>
     <string name="registration">Inscription</string>
     <string name="home">Accueil</string>
+    <string name="signin">S\'identifier</string>
+    <string name="password">Mot de passe</string>
 </resources>

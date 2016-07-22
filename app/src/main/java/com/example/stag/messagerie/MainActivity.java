@@ -1,5 +1,6 @@
 package com.example.stag.messagerie;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -21,7 +22,8 @@ public class MainActivity extends AppCompatActivity {
         startConversButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent startConversActivity = new Intent(MainActivity.this, SignInActivity.class);
+                startActivity(startConversActivity);
             }
         });
 
